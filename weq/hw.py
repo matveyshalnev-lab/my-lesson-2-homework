@@ -1,40 +1,21 @@
-#
-#a = int(input("Введіть число: "))
-#print("Квадрат числа:", a * a)
+num1 = float(input("Введіть перше число: "))
+num2 = float(input("Введіть друге число: "))
 
-##
-# a = int(input(" перше число: "))
-# b = int(input(" друге число: "))
-# c = int(input(" третє число: "))
-# print((a+b+c)/3)
+operation = input("Введіть операцію (+, -, *, /): ")
+if operation == "+":
+    result = num1 + num2
+    print(result)
+    if operation == "-":
+        result = num1 - num2
+        print(result)
+        if operation == "*":
+            result = num1 * num2
+            print(result)
+            if operation == "/":
+                result = num1 / num2
+                print(result)
+            else:
+                print("Помилка!!! ділення на нуль неможливе")
 
-###
-# min = int(input("Введіть кількість хвилин:"))
-# print(min // 60, "hours", min % 60,"minutes" )
-
-####
-
-# price = int(input("Введіть ціну:"))
-# discount = int(input("Введіть знижку (%): "))
-# print("Ціна зі знижкою:", price - price * discount // 100)
-
-#####
-# number = int(input("Введіть число:"))
-# print("Остання цифра:", number % 10 )
-
-######
-# a=int(input("Введіть довжину:"))
-# b=int(input("Введіть ширину:"))
-# print("Периметр:", 2 * (a + b))
-
-#######
-
-# w= int(input("Введіть 4-значне число: "))
-# a = w // 1000
-# b = (w // 100) % 10
-# c = (w //100) % 10
-# d = w % 10
-# print(a)
-# print(b)
-# print(c)
-# print(d)
+        else:
+            print("Помилка!!! невідома операція")
