@@ -92,13 +92,27 @@ print(NUMBER)
 # result = first_number + second_number
 # print(result)
 
-name = input("Enter your name: ")
-age = int(input("Enter your age: "))
-# v1
-print("Hello,", name, "You are", age, "years old!")
-# v2
-print("Hello," + name, " You are " + str(age) + " years old!")
-# v3
-print(f"Hello,{name}. You are {age} years old!") 
+# # name = input("Enter your name: ")
+# age = int(input("Enter your age: "))
+# # v1
+# print("Hello,", name, "You are", age, "years old!")
+# # v2
+# print("Hello," + name, " You are " + str(age) + " years old!")
+# # v3
+# print(f"Hello,{name}. You are {age} years old!")
 
+a = int(input())
+b = int(input())
+d = input()
 
+if d == "+":
+    print(a + b)
+if d == "-":
+    print(a - b)
+if d == "*":
+    print(a * b)
+if d == "/":
+    if b == 0:
+        print("Не можна")
+    else:
+        print(a / b)
