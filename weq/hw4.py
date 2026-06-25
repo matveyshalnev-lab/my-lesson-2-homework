@@ -12,3 +12,11 @@
 #     result = sum(list[::2]) * list[-1]
 #     print(result)
 
+#4.3
+# import random
+# numbers = [random.randint(3, 10) for _ in range(random.randint(3, 10))]
+# print(numbers)
+#
+# new_list = [numbers [0], numbers [2], numbers [-2]]
+# print ("Початковий список:", numbers)
+# print ("Фінальний спискок:", new_list)
