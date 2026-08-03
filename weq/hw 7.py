@@ -1,56 +1,79 @@
-#7.1
-
-# def say_hi(name, age):
-#   return f"Hi. My name is {name} and I'm {age} years old"
+#13.1
+# import codecs
+# import re
 #
-# assert say_hi("Alex", 32) == "Hi. My name is Alex and I'm 32 years old", 'Test1'
-# assert say_hi("Frank", 68) == "Hi. My name is Frank and I'm 68 years old", 'Test2'
-# print('ОК')
-
-#7.2
-# def correct_sentence(text):
-#     text = text[0].upper() + text[1:]
-#     if text[-1] != ".":
-#         text += "."
-#     return text
+# def delete_html_tags(html_file, result_file='cleaned.txt'):
+#     with codecs.open(html_file, 'r', 'utf-8') as file:
+#         text = file.read()
 #
-# assert correct_sentence("greetings, friends") == "Greetings, friends.", 'Test1'
-# assert correct_sentence("hello") == "Hello.", 'Test2'
-# assert correct_sentence("Greetings. Friends") == "Greetings. Friends.", 'Test3'
-# assert correct_sentence("Greetings, friends.") == "Greetings, friends.", 'Test4'
-# assert correct_sentence("greetings, friends.") == "Greetings, friends.", 'Test5'
-# print('ОК')
-
-#7.3
-
-# def second_index(text, some_str):
-#     first = text.find(some_str)
+#     text = re.sub('<.*?>', '', text)
 #
-#     if first == -1:
-#         return None
+#     with codecs.open(result_file, 'w', 'utf-8') as file:
+#         file.write(text)
+#13.2
+# class Item:
 #
-#     second = text.find(some_str, first + 1)
+#     def __init__(self, name, price, description, dimensions):
+#         self.price = price
+#         self.description = description
+#         self.dimensions = dimensions
+#         self.name = name
 #
-#     if second == -1:
-#         return None
-#
-#     return second
+#     def __str__(self):
+#         return f"{self.name}, price: {self.price}"
 #
 #
-# assert second_index("sims", "s") == 3, 'Test1'
-# assert second_index("find the river", "e") == 12, 'Test2'
-# assert second_index("hi", "h") is None, 'Test3'
-# assert second_index("Hello, hello", "lo") == 10, 'Test4'
-# print('ОК')
-
-#7.4
-
-# def common_elements():
-#     list1 = [i for i in range(100) if i % 3 == 0]
-#     list2 = [i for i in range(100) if i % 5 == 0]
+# class User:
 #
-#     return set(list1) & set(list2)
+#     def __init__(self, name, surname, numberphone):
+#         self.name = name
+#         self.surname = surname
+#         self.numberphone = numberphone
+#
+#     def __str__(self):
+#         return f"{self.name} {self.surname}"
 #
 #
-# assert common_elements() == {0, 75, 45, 15, 90, 60, 30}
-# print("OK")
+# class Purchase:
+#
+#     def __init__(self, user):
+#         self.products = {}
+#         self.user = user
+#
+#     def add_item(self, item, cnt):
+#         self.products[item] = cnt
+#
+#     def __str__(self):
+#         text = f"User: {self.user}\nItems:\n"
+#         for item, cnt in self.products.items():
+#             text += f"{item.name}: {cnt} pcs.\n"
+#         return text
+#
+#     def get_total(self):
+#         total = 0
+#         for item, cnt in self.products.items():
+#             total += item.price * cnt
+#         return total
+#
+#
+# lemon = Item('lemon', 5, "yellow", "small")
+# apple = Item('apple', 2, "red", "middle")
+#
+# print(lemon)
+#
+# buyer = User("Ivan", "Ivanov", "02628162")
+# print(buyer)
+#
+# cart = Purchase(buyer)
+# cart.add_item(lemon, 4)
+# cart.add_item(apple, 20)
+# print(cart)
+#
+# assert isinstance(cart.user, User) is True
+# assert cart.get_total() == 60
+# assert cart.get_total() == 60
+#
+# cart.add_item(apple, 10)
+# print(cart)
+#
+# assert cart.get_total() == 40
